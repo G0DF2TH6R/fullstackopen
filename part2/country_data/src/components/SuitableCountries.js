@@ -1,7 +1,6 @@
-import countriesService from "../services/countriesService"
 import Country from "./Country"
 
-const SuitableCountries = ( {handleTemperature, temperature, showCountry, countries} ) => {
+const SuitableCountries = ( {temperatureIcon, handleTemperature, temperature, showCountry, countries} ) => {
 
     if (countries == undefined) {
         return null
@@ -11,7 +10,7 @@ const SuitableCountries = ( {handleTemperature, temperature, showCountry, countr
         handleTemperature(countries[0])
 
         return (
-        <Country temperature={temperature} country={countries[0]} />
+        <Country temperatureIcon={temperatureIcon} temperature={temperature} country={countries[0]} />
         )
     }
 

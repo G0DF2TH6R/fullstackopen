@@ -1,8 +1,6 @@
 
 
-const Country = ( {temperature, country} ) => {
-
-
+const Country = ( {temperatureIcon, temperature, country} ) => {
 
     return (
         <div>
@@ -12,7 +10,8 @@ const Country = ( {temperature, country} ) => {
             <p>Area: {country.area}</p>
             <ul>{Object.values(country.languages).map(language => <li>{language}</li>)}</ul>
             <img src={country.flags["png"]} />
-            <p>Weather in {country.capital}: {temperature} C°</p>
+            <p>Weather in {country.capital}: {temperature} Celcius</p>
+            <img src={`https://openweathermap.org/img/wn/${temperatureIcon}@2x.png`} />
 
 
         </div>

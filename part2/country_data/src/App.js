@@ -7,11 +7,17 @@ function App() {
   const [suitableCountries, setSuitableCountries] = useState([])
   const [filter, setFilter] = useState('')
   const [temperature, setTemperature] = useState('')
+  const [temperatureIcon, setTemperatureIcon] = useState('')
 
   const handleTemperature = (country) => {
     countriesService
     .getCapitalWeather(country.capital)
-    .then(response => setTemperature(response))
+    .then(response => {
+      setTemperatureIcon(response.weather[0].icon)
+
+
+      setTemperature(response.main.temp)
+    })
 
   }
 
@@ -37,7 +43,7 @@ function App() {
     <div>
       <p>find countries</p>
       <input onChange={handleFilterChange} value={filter} />
-      <SuitableCountries handleTemperature={handleTemperature} temperature={temperature} showCountry={showCountry} countries={suitableCountries} />
+      <SuitableCountries temperatureIcon={temperatureIcon} handleTemperature={handleTemperature} temperature={temperature} showCountry={showCountry} countries={suitableCountries} />
     </div>
   );
 }
