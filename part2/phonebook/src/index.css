@@ -1,0 +1,13 @@
+.goodNotification {
+    border: green 2px solid;
+    padding: 3px;
+    font-size: 15px;
+    background-color: lightgrey;
+}
+
+.badNotification {
+    border: red 2px solid;
+    padding: 3px;
+    font-size: 15px;
+    background-color: lightgrey;
+}
